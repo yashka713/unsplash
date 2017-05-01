@@ -1,0 +1,26 @@
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+    - lib/**/*.rake
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*
+    - Gemfile
+    - config/*/*
+    - vendor/*/*
+#    - spec/**/**
+Metrics/LineLength:
+  # This will disable the rule completely, regardless what other options you put
+  Enabled: false
+  # Change the default 80 chars limit value
+  Max: 120
+  # If you want the rule only apply to a specific folder/file
+  Include:
+    - 'app/**/*'
+  # If you want the rule not to apply to a specific folder/file
+
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
