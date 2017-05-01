@@ -59,3 +59,5 @@ gem 'factory_girl_rails', '~> 4.0'
 gem 'simple_form'
 gem 'httparty'
 gem 'figaro'
+
+ruby '2.4.1'
