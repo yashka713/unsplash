@@ -19,8 +19,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
-.idea/*
+.idea/
 /public
 /config/local_env.yml
 # Ignore application configuration
 /config/application.yml
+.gitignore
