@@ -1,6 +1,7 @@
 h1 Photo#show
 br
-table.table
+= @data
+/table.table
   - @data.each do |key, value|
     tr
       td "#{key}"

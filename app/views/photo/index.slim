@@ -1,17 +1,22 @@
-h1 Unsplash:
-p
-  = form_tag("/", method: "get") do
-    = label_tag(:q, "Search for:")
-    = text_field_tag :q, params[:q]
-    = submit_tag("Search")
-br
-- @data.each do |img|
-  = link_to image_tag(img['urls']['thumb'], alt: 'rss feed', class: 'img-index__thumb'),
-          photo_show_path(img['id'])
-  table.table
-    - img.each do |key, value|
-      tr
-        td
-        /= image_tag(from_json_to_hash(value['urls']), :alt => "rss feed")
-        td "#{key}"
-        td "#{value}"
+.search
+  .search-panel
+    = form_tag("/", method: "get", class: 'search-form') do
+      = label_tag(:q, 'Search for:')
+      = text_field_tag :q, params[:q]
+      = submit_tag 'Search', class: 'search-submit'
+  .search-result
+    - @data.each do |val|
+      div.result-block
+        = link_to image_tag(val['urls']['small'], alt: "#{val['id']} resource", class: 'search-img'),
+              photo_show_path(val['id'].to_sym)
+        .result-panel
+          svg.likes-icon
+          span.likes-count = val['likes']
+          span.author "#{val['user']['name']}, #{val['user']['location']}"
+      /table.table
+        - img.each do |key, value|
+          tr
+            td
+            /= image_tag(from_json_to_hash(value['urls']), :alt => "rss feed")
+            td "#{key}"
+            td "#{value}"

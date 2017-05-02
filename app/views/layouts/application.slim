@@ -1,11 +1,23 @@
-head
-  title Unsplash
-  = csrf_meta_tags
+doctype html
+html
+  head
+    title Unsplash
+    = csrf_meta_tags
 
-  = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
-  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-body
-  h2 Made by Yaroslav
-  = yield
+  body
+    header.header
+      .wrapper
+        - flash.each do |key, value|
+          div class = "alert"
+            = value
+      .wrapper
+        .header-title
+          p
+            | Free Photo Getter
+    .main
+      .wrapper
+        = yield
 

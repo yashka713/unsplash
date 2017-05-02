@@ -7,15 +7,21 @@ class PhotoController < ApplicationController
                          },
                          query: {query: "#{params[:q]}"})
     @data = JSON.parse(@data.body)['results']
+    if @data == []
+      flash[:notice] = 'Please, fill the blank below :('
+    else
+      flash[:notice] = ''
+    end
   end
 
   def show
-    id = params[:id]
-    @data = HTTParty.get(ENV['GET_PHOTO'] + "#{id}",
+    render 'show'
+    @data = HTTParty.get(ENV['GET_PHOTO'],
                          headers: {
-                             Authorization: 'Client-ID 3e46d797b1b4e8887ff6c2c4fa3e07cd2995aa5003a1b92daffea94176f8f810'
+                             Authorization: 'Client-ID 3e46d797b1b4e8887ff6c2c4fa3e07cd2995aa5003a1b92daffea94176f8f810',
+                             id: "#{params[:id]}"
                          },
-                         query: {id: "#{id}"})
+                         query: {})
     @data = JSON.parse(@data.body)
   end
 
