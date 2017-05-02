@@ -1,12 +1,18 @@
 h1 Unsplash:
-/p
-/  = @response.body
-/p
-/  = @response.code
-/p
-/  = @response.message
-p Your request:
-/= simple_form_for @photo do |f|
-  p Enter the request:
-  = f.input :request, error: "request can't be blank", label: 'Enter photo request, please'
-  = f.submit 'Enter'
+p
+  = form_tag("/", method: "get") do
+    = label_tag(:q, "Search for:")
+    = text_field_tag(:q)
+    = submit_tag("Search")
+br
+= from_json_to_hash(@data.body).each do |key|
+  = link_to image_tag(key, alt: 'rss feed', class: 'img-index__thumb'), photo_show_path(key)
+    /table.table = e.each do |key, value|
+  /  tr
+  /    td
+  /    /= image_tag(from_json_to_hash(value['urls']), :alt => "rss feed")
+  /    td "#{key}"
+  /    -if key == 'urls'
+  /      td.red = return_src(value)
+  /    - else
+  /      td "#{value}"

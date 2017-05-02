@@ -1,0 +1,4 @@
+h1 Photo#show
+br
+/= from_json_to_hash(@data.body).each do |e|
+/  = image_tag(e['urls']['thumb'], alt: 'rss feed', class: 'img-index__thumb')
