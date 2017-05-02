@@ -5,7 +5,7 @@ class PhotoController < ApplicationController
   end
 
   def show
-    @data =
+    # @data =
   end
 
   def my_request(param)

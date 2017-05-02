@@ -35,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/photo_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+              <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -516,12 +516,12 @@
       <workItem from="1493627733411" duration="347000" />
       <workItem from="1493628630934" duration="39016000" />
       <workItem from="1493705055745" duration="357000" />
-      <workItem from="1493705593998" duration="2803000" />
+      <workItem from="1493705593998" duration="2890000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42523000" />
+    <option name="totallyTimeSpent" value="42610000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-1" width="1368" height="745" extended-state="6" />
@@ -835,7 +835,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/photo_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="12" lean-forward="false" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
