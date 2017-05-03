@@ -25,7 +25,7 @@ tr, td {
 body {
   background: none repeat scroll 0 0 #0b192f;
   color: #fff;
-  font-family: roboto;
+  font-family: roboto, sans-serif;
   font-weight: 300;
 }
 
@@ -109,4 +109,47 @@ svg.likes-icon {
 .author{
   margin-left: 15px;
   width: 300px;
+}
+
+.photo-title{
+  text-align: center;
+}
+
+.photo{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  align-content: center;
+}
+
+.img-photo{
+}
+
+.photo-description{
+  background-color: rgba(0,0,0, 0.5);
+  width: 25%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.user-profile{
+  padding: 5px 0 5px 10px;
+}
+
+.user-username{
+  margin-left: 10px;
+  vertical-align: top;
+}
+.likes-icon--profile{
+  width: 20px;
+  height: 20px;
+}
+
+.inline{
+ display: inline-block;
 }
