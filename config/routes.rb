@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  get 'photo/show'
+  get 'photos/show'
 
-  get 'photo/index'
+  get 'photos/index'
 
-  root 'photo#index'
+  root 'photos#index'
+
+  resource :photo do
+    get 'download'
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

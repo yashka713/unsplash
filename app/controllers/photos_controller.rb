@@ -1,4 +1,5 @@
-class PhotoController < ApplicationController
+class PhotosController < ApplicationController
+  require 'open-uri'
 
   def index
     @data = HTTParty.get(ENV['SEARCH_URL'],
@@ -20,15 +21,18 @@ class PhotoController < ApplicationController
                              Authorization: 'Client-ID 3e46d797b1b4e8887ff6c2c4fa3e07cd2995aa5003a1b92daffea94176f8f810'
                          })
     @data = JSON.parse(@data.body)
-    # debugger
   end
 
-  # def my_request(param, adress)
-  #   HTTParty.get(adress,
-  #                headers: {
-  #                    Authorization: 'Client-ID 3e46d797b1b4e8887ff6c2c4fa3e07cd2995aa5003a1b92daffea94176f8f810'
-  #                },
-  #                query: {query: "#{param}"})
-  # end
+  def download
+    @data = HTTParty.get(ENV['GET_PHOTO'] + "/#{params[:format]}/download",
+                 headers: {
+                     Authorization: 'Client-ID 3e46d797b1b4e8887ff6c2c4fa3e07cd2995aa5003a1b92daffea94176f8f810'
+                 })
+    open("#{@data['url']}}") do |u|
+      File.open("#{@data['url'].split('/').last}", 'wb') {|f| f.write(u.read)}
+      flash[:notice] = 'File was successfully created'
+    end
+    redirect_to photos_show_path(params[:format])
+  end
 
 end

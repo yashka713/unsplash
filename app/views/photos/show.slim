@@ -1,0 +1,26 @@
+h2.photo-title
+  | Photo created: "#{normalize_date(@data['created_at'])}"
+section.photo
+  = image_tag(@data['urls']['regular'],alt: "Categories of photos: #{normalize_category(@data['categories'])}", class: 'img-photos')
+  .photo-description
+    .user-profile
+      p
+        ' User profile:
+      .block
+        = image_tag(@data['user']['profile_image']['medium'], alt: 'User avatar', class: 'user-avatar')
+        .inline
+          div
+            span.user-username
+              = @data['user']['username']
+          div
+            span.user-likes
+            ' Has
+            svg.likes-icon.likes-icon--profile
+            = ': ' + @data['user']['total_likes'].to_s
+    .download-link
+      = link_to 'download', download_photo_path(@data['id'])
+    p
+      ' Categories:
+      = normalize_category (@data['categories'])
+
+= @data

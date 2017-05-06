@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PhotoController, type: :controller do
+RSpec.describe PhotosController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
