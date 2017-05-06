@@ -28,11 +28,14 @@ class PhotosController < ApplicationController
                  headers: {
                      Authorization: 'Client-ID 3e46d797b1b4e8887ff6c2c4fa3e07cd2995aa5003a1b92daffea94176f8f810'
                  })
-    open("#{@data['url']}}") do |u|
-      File.open("#{@data['url'].split('/').last}", 'wb') {|f| f.write(u.read)}
-      flash[:notice] = 'File was successfully created'
-    end
-    redirect_to photos_show_path(params[:format])
+    url = @data['url']
+    data = open(url).read
+    send_data data, :disposition => 'attachment', :filename=>"#{@data['url'].split('/').last}"
+    # open("#{@data['url']}}") do |u|
+    #   File.open("#{@data['url'].split('/').last}", 'wb') {|f| f.write(u.read)}
+    #   flash[:notice] = 'File was successfully created'
+    # end
+    # redirect_to photos_show_path(params[:format])
   end
 
 end
