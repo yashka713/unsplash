@@ -12,7 +12,14 @@
   background: #000;
   z-index: 100500;
 }
-
+#page-preloader .spinner {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: url('loading51.gif') no-repeat 50% 50%;
+}
 
 
 body {
