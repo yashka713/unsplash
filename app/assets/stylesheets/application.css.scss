@@ -1,26 +1,19 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
-
-.table {
-  border: 1px solid black;
+/*spinner*/
+#page-preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 100500;
 }
 
-tr, td {
-  border: 1px solid black;
-}
+
 
 body {
   background: none repeat scroll 0 0 #0b192f;
@@ -73,6 +66,38 @@ body {
   align-items: center;
   flex-wrap: wrap;
   align-content: center;
+  position: relative;
+}
+
+.page {
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 10%;
+  min-height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.link-page {
+  display: block;
+  height: 100%;
+  min-height: 80px;
+  width: 100%;
+}
+
+.previous-page {
+  left: 0;
+  background: url("1494205653_icon-ios7-arrow-left.png") no-repeat center;
+}
+
+.next-page {
+  right: 0;
+  background: url("1494205611_icon-ios7-arrow-right.png") no-repeat center;
 }
 
 a:hover {
@@ -87,7 +112,8 @@ a:hover {
 .result-panel {
   padding: 0 15px;
 }
-.result-panel{
+
+.result-panel {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -95,6 +121,7 @@ a:hover {
   flex-wrap: nowrap;
   align-content: center;
 }
+
 svg.likes-icon {
   background: transparent url('like.svg') no-repeat;
   display: inline-block;
@@ -102,20 +129,20 @@ svg.likes-icon {
   height: 25px;
 }
 
-.likes-count{
+.likes-count {
   margin-left: 3px;
 }
 
-.author{
+.author {
   margin-left: 15px;
   width: 300px;
 }
 
-.photo-title{
+.photo-title {
   text-align: center;
 }
 
-.photo{
+.photo {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -125,37 +152,41 @@ svg.likes-icon {
   align-content: center;
 }
 
-.img-photo{
-}
-
-.photo-description{
-  background-color: rgba(0,0,0, 0.5);
+.photo-description {
+  background-color: rgba(0, 0, 0, 0.5);
   width: 25%;
   min-height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   text-align: center;
+  opacity: 0;
 }
 
-.user-profile{
+.photo-description:hover {
+  opacity: 0.9;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.user-profile {
   padding: 5px 0;
 }
 
-.user-avatar{
+.user-avatar {
   vertical-align: top;
   margin-right: 10px;
 }
 
-.user-username{
+.user-username {
   margin-left: 10px;
   vertical-align: top;
 }
-.likes-icon--profile{
+
+.likes-icon--profile {
   width: 20px;
   height: 20px;
 }
 
-.inline{
- display: inline-block;
+.inline {
+  display: inline-block;
 }

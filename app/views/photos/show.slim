@@ -16,11 +16,9 @@ section.photo
             span.user-likes
             ' Has
             svg.likes-icon.likes-icon--profile
-            = ': ' + @data['user']['total_likes'].to_s
-    .download-link
-      = link_to 'download', download_photo_path(@data['id'])
+            = ': ' + @data['user']['likes'].to_s
     p
       ' Categories:
       = normalize_category (@data['categories'])
-
-= @data
+    .download-link
+      = link_to 'download', download_photo_path(@data['id'])

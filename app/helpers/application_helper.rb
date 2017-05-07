@@ -16,4 +16,22 @@ module ApplicationHelper
     end
     '#'
   end
+
+  def previous_page(page)
+    page = page.request.last_uri.to_s.split('=')[1].to_i
+    if page.nil? || page <= 0
+      1
+    else
+      page -= 1
+    end
+  end
+
+  def next_page(page)
+    page = page.request.last_uri.to_s.split('=')[1].to_i
+    if page.nil? || page <= 0
+      1
+    else
+      page += 1
+    end
+  end
 end

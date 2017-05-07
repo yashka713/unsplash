@@ -2,12 +2,12 @@ class PhotosController < ApplicationController
   require 'open-uri'
 
   def index
-    @data = HTTParty.get(ENV['SEARCH_URL'],
+    page = params[:page] || 1
+    @data = HTTParty.get("https://api.unsplash.com/search/photos?page=#{page}",
                          headers: {
-                             Authorization: 'Client-ID 3e46d797b1b4e8887ff6c2c4fa3e07cd2995aa5003a1b92daffea94176f8f810'
+                             Authorization: 'Client-ID e5d68f7e1de986324266773f832f6d473896eddf40090c5e594d9ae9374eff8a'
                          },
                          query: {query: "#{params[:q]}"})
-    @data = JSON.parse(@data.body)['results']
     if @data == []
       flash[:notice] = 'Please, fill the blank below, with correct query:('
     else
@@ -18,24 +18,17 @@ class PhotosController < ApplicationController
   def show
     @data = HTTParty.get(ENV['GET_PHOTO'] + "/#{params[:format]}",
                          headers: {
-                             Authorization: 'Client-ID 3e46d797b1b4e8887ff6c2c4fa3e07cd2995aa5003a1b92daffea94176f8f810'
+                             Authorization: 'Client-ID e5d68f7e1de986324266773f832f6d473896eddf40090c5e594d9ae9374eff8a'
                          })
-    @data = JSON.parse(@data.body)
   end
 
   def download
     @data = HTTParty.get(ENV['GET_PHOTO'] + "/#{params[:format]}/download",
-                 headers: {
-                     Authorization: 'Client-ID 3e46d797b1b4e8887ff6c2c4fa3e07cd2995aa5003a1b92daffea94176f8f810'
-                 })
+                         headers: {
+                             Authorization: 'Client-ID e5d68f7e1de986324266773f832f6d473896eddf40090c5e594d9ae9374eff8a'
+                         })
     url = @data['url']
     data = open(url).read
-    send_data data, :disposition => 'attachment', :filename=>"#{@data['url'].split('/').last}"
-    # open("#{@data['url']}}") do |u|
-    #   File.open("#{@data['url'].split('/').last}", 'wb') {|f| f.write(u.read)}
-    #   flash[:notice] = 'File was successfully created'
-    # end
-    # redirect_to photos_show_path(params[:format])
+    send_data data, :disposition => 'attachment', :filename => "#{@data['url'].split('/').last}"
   end
-
 end

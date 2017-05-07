@@ -2,10 +2,10 @@
   .search-panel
     = form_tag("/", method: "get", class: 'search-form') do
       = label_tag(:q, 'Search for:')
-      = text_field_tag :q, params[:q]
+      = text_field_tag :q
       = submit_tag 'Search', class: 'search-submit'
   .search-result
-    - @data.each do |val|
+    - @data['results'].each do |val|
       div.result-block
         = link_to image_tag(val['urls']['small'], alt: "#{val['id']} resource", class: 'search-img'),
               photos_show_path(val['id'])
@@ -13,3 +13,8 @@
           svg.likes-icon
           span.likes-count = val['likes']
           span.author "#{val['user']['name']}, #{val['user']['location']}"
+    - if @data['results'].length > 0
+      .previous-page.page
+        = link_to '', photos_index_path(:q=> params[:q], :page => previous_page(@data)), class: 'lint-prev link-page'
+      .next-page.page
+        = link_to '', photos_index_path(:q=> params[:q], :page => next_page(@data)), class: 'lint-next link-page'
