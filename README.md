@@ -1,24 +1,32 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app help you get the wonderful photo.
+
+You can use this app follow by link [GitHub](http://github.com)
+
+App pass the test in CI and you can see that [GitHub](http://github.com)
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: **2.4.1**
 
-* System dependencies
+* I used next GEM's for development:
+1. gem 'slim-rails' for view
+1. gem 'rubocop' for checking style of code
+1. gem 'httparty' for HTTP-requests
+1. gem 'figaro' for Environment
 
-* Configuration
+* I used next GEM's for tests:
+1. gem 'rspec-rails'
+1. gem 'capybara'
+1. gem 'vcr'
+1. gem 'webmock'
 
-* Database creation
+* App works without any *DB*
 
-* Database initialization
+* Just type ```bundle exec rake``` and see the result of test
+* Just type ```rubocop``` and see how it beautiful
 
-* How to run the test suite
+* The API is available at `https://api.unsplash.com/`. Responses are sent as JSON.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Created by Yaroslav Liakh
