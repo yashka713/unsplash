@@ -4,7 +4,7 @@ This app help you get the wonderful photo.
 
 You can use this app follow by link [GitHub](http://github.com)
 
-App pass the test in CI and you can see that [GitHub](http://github.com)
+App pass the test in CI and you can see that [circleci](https://circleci.com/gh/yashka713/unsplash/tree/master)
 
 * Ruby version: **2.4.1**
 
