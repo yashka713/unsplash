@@ -1,6 +1,6 @@
 .search
   .search-panel
-    = form_tag("/", method: "get", class: 'search-form') do
+    = form_tag('/', method: 'get', class: 'search-form') do
       = label_tag(:q, 'Search for:')
       = text_field_tag :q
       = submit_tag 'Search', class: 'search-submit'
