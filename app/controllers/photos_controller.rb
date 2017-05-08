@@ -3,32 +3,30 @@ class PhotosController < ApplicationController
 
   def index
     page = params[:page] || 1
-    @data = HTTParty.get("https://api.unsplash.com/search/photos?page=#{page}",
+    @data = HTTParty.get(ENV['SEARCH_URL'] + "?page=#{page}",
                          headers: {
-                             Authorization: 'Client-ID e5d68f7e1de986324266773f832f6d473896eddf40090c5e594d9ae9374eff8a'
+                           Authorization: ENV['FIRST_ID']
                          },
-                         query: {query: "#{params[:q]}"})
-    if @data == []
-      flash[:notice] = 'Please, fill the blank below, with correct query:('
-    else
-      flash[:notice] = ''
-    end
+                         query: { query: params[:q].to_s })
+    flash[:notice] = if @data['results'] == []
+                       'Please, fill the blank below, with correct query'
+                     end
   end
 
   def show
     @data = HTTParty.get(ENV['GET_PHOTO'] + "/#{params[:format]}",
                          headers: {
-                             Authorization: 'Client-ID e5d68f7e1de986324266773f832f6d473896eddf40090c5e594d9ae9374eff8a'
+                           Authorization: ENV['FIRST_ID']
                          })
   end
 
   def download
     @data = HTTParty.get(ENV['GET_PHOTO'] + "/#{params[:format]}/download",
                          headers: {
-                             Authorization: 'Client-ID e5d68f7e1de986324266773f832f6d473896eddf40090c5e594d9ae9374eff8a'
+                           Authorization: ENV['FIRST_ID']
                          })
     url = @data['url']
     data = open(url).read
-    send_data data, :disposition => 'attachment', :filename => "#{@data['url'].split('/').last}"
+    send_data data, disposition: 'attachment', filename: params[:format]
   end
 end

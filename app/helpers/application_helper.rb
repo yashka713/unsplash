@@ -5,12 +5,10 @@ module ApplicationHelper
 
   def normalize_category(categories)
     str = ''
-    unless categories==[]
+    unless categories == []
       categories.each_with_index do |category, index|
         str += '#' + category['title']
-        if index < @data['categories'].length - 1
-          str += ', '
-        end
+        str += ', ' if index < @data['categories'].length - 1
       end
       return str
     end
@@ -18,20 +16,20 @@ module ApplicationHelper
   end
 
   def previous_page(page)
-    page = page.request.last_uri.to_s.split('=')[1].to_i
-    if page.nil? || page <= 0
+    numb = page.request.last_uri.query.split('=')[1].to_i
+    if numb.nil? || numb <= 0
       1
     else
-      page -= 1
+      numb -= 1
     end
   end
 
   def next_page(page)
-    page = page.request.last_uri.to_s.split('=')[1].to_i
-    if page.nil? || page <= 0
+    numb = page.request.last_uri.query.split('=')[1].to_i
+    if numb.nil? || numb <= 0
       1
     else
-      page += 1
+      numb += 1
     end
   end
 end

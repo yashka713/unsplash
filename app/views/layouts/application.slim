@@ -5,11 +5,10 @@ html
     = csrf_meta_tags
 
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    #page-preloader
-      span.spinner
+    #page-preloader.preloader
+      .loader
     header.header
       .wrapper
         - flash.each do |key, value|
@@ -23,3 +22,4 @@ html
       .wrapper
         = yield
 
+    = javascript_include_tag 'preloader'
