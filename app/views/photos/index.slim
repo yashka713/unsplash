@@ -4,17 +4,17 @@
       = label_tag(:q, 'Search for:')
       = text_field_tag :q
       = submit_tag 'Search', class: 'search-submit'
-  .search-result
+  .search-result.flex-container
     - @data['results'].each do |val|
       div.result-block
         = link_to image_tag(val['urls']['small'], alt: "#{val['id']} resource", class: 'search-img'),
               photos_show_path(val['id'])
-        .result-panel
+        .result-panel.flex-container
           svg.likes-icon
           span.likes-count = val['likes']
           span.author "#{val['user']['name']}, #{val['user']['location']}"
     - if @data['results'].length > 0
-      .previous-page.page
+      .previous-page.page.flex-container
         = link_to '', photos_index_path(:q=> params[:q], :page => previous_page(@data)), class: 'lint-prev link-page'
       .next-page.page
         = link_to '', photos_index_path(:q=> params[:q], :page => next_page(@data)), class: 'lint-next link-page'

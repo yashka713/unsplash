@@ -1,6 +1,6 @@
 h2.photo-title
   | Photo created: "#{normalize_date(@data['created_at'])}"
-section.photo
+section.photo.flex-container
   = image_tag(@data['urls']['regular'],alt: "Categories of photos: #{normalize_category(@data['categories'])}", class: 'img-photos')
   .photo-description
     .user-profile
