@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/yashka713/unsplash/branches/master/shields_badge.svg)](https://semaphoreci.com/yashka713/unsplash)
+
 # Free Photo Getter
 
 This app help you get the wonderful photo.
