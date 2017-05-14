@@ -33,8 +33,8 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 1. gem 'webmock'
 
 * App works without any *DB*
-Test
 -------------
+Test:
 `rubocop && rspec`
 
 * Created by Yaroslav Liakh
