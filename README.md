@@ -3,11 +3,10 @@
 This app help you get the wonderful photo.
 
 You can use this app follow by link [heroku](https://github.com/yashka713/unsplash)
-===============
 Staging:  [circleci](https://circleci.com/gh/yashka713/unsplash/tree/master)
 
 * Ruby version: **2.4.1**
-
+-----------------
 Install
 -----------------
 ```
