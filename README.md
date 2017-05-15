@@ -1,12 +1,26 @@
-# README
+[![Build Status](https://semaphoreci.com/api/v1/yashka713/unsplash/branches/master/shields_badge.svg)](https://semaphoreci.com/yashka713/unsplash)
+
+# Free Photo Getter
 
 This app help you get the wonderful photo.
 
-You can use this app follow by link [GitHub](http://github.com)
-
-App pass the test in CI and you can see that [circleci](https://circleci.com/gh/yashka713/unsplash/tree/master)
+You can use this app follow by link [heroku](https://github.com/yashka713/unsplash)
+Staging:  [circleci](https://circleci.com/gh/yashka713/unsplash/tree/master)
 
 * Ruby version: **2.4.1**
+-----------------
+Install
+-----------------
+```
+git clone https://github.com/yashka713/unsplash.git && cd your_repo
+bundle install
+```
+Launch
+------------
+```
+bundle exec rails s
+```
+Navigate to [http://localhost:3000](http://localhost:3000)
 
 * I used next GEM's for development:
 1. gem 'slim-rails' for view
@@ -21,10 +35,8 @@ App pass the test in CI and you can see that [circleci](https://circleci.com/gh/
 1. gem 'webmock'
 
 * App works without any *DB*
-
-* Just type ```bundle exec rake``` and see the result of test
-* Just type ```rubocop``` and see how it beautiful
-
-* The API is available at `https://api.unsplash.com/`. Responses are sent as JSON.
+-------------
+Test:
+`rubocop && rspec`
 
 * Created by Yaroslav Liakh
