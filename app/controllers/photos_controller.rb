@@ -1,14 +1,14 @@
 class PhotosController < ApplicationController
   require 'open-uri'
+  before_action :check_param_query, only: :index
 
   def index
-    page = params[:page] || 1
-    @data = HTTParty.get(ENV['SEARCH_URL'] + "?page=#{page}",
+    @data = HTTParty.get(ENV['SEARCH_URL'] + "?page=#{params[:page]}",
                          headers: {
                            Authorization: ENV['FIRST_ID']
                          },
                          query: { query: params[:q].to_s })
-    flash[:notice] = if @data['results'] == []
+    flash[:notice] = if params[:q] == ''
                        'Please, fill the blank below, with correct query'
                      end
   end
@@ -28,5 +28,9 @@ class PhotosController < ApplicationController
     url = @data['url']
     data = open(url).read
     send_data data, disposition: 'attachment', filename: params[:format]
+  end
+
+  def check_param_query
+    params[:page].to_i < 1 && !params[:page].nil? ? params[:page] = 1 : params[:page]
   end
 end

@@ -32,6 +32,3 @@ gem 'rubocop', require: false
 gem 'httparty'
 gem 'figaro'
 gem 'rails_12factor'
-
-
-ruby '2.4.1'
