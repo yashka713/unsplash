@@ -1,2 +1,2 @@
-class Attachment < ActiveRecord::Base
-end
+# class Attachment < ActiveRecord::Base
+# end

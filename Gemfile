@@ -31,4 +31,4 @@ gem 'slim-rails'
 gem 'rubocop', require: false
 gem 'httparty'
 gem 'figaro'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production

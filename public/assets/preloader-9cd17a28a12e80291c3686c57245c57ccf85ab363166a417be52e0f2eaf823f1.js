@@ -1,0 +1,1 @@
+var preloader=document.getElementById("page-preloader");preloader.classList.contains("done")||preloader.classList.add("done");

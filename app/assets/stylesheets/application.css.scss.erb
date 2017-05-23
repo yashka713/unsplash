@@ -1,7 +1,3 @@
-/*
- *= require_tree .
- *= require_self
- */
 @import "responcive";
 @import "spinner";
 
@@ -67,6 +63,7 @@ body {
   width: 10%;
   min-height: 100%;
   top: 0;
+  background-color: white;
 }
 
 .link-page{
@@ -79,12 +76,14 @@ body {
 
 .previous-page {
   left: 0;
-  background: url("1494205653_icon-ios7-arrow-left.png") no-repeat center;
+  -webkit-mask: image_url("1494205653_icon-ios7-arrow-left.svg") no-repeat center;
+  mask: image_url("1494205653_icon-ios7-arrow-left.svg") no-repeat center;
 }
 
 .next-page {
   right: 0;
-  background: url("1494205611_icon-ios7-arrow-right.png") no-repeat center;
+  -webkit-mask: image_url("1494205611_icon-ios7-arrow-right.svg") no-repeat center;
+  mask: image_url("1494205611_icon-ios7-arrow-right.svg") no-repeat center;
 }
 
 a:hover {
@@ -102,7 +101,7 @@ a:hover {
 }
 
 svg.likes-icon {
-  background: transparent url('like.svg') no-repeat;
+  background: transparent image_url('like.svg') no-repeat;
   display: inline-block;
   width: 25px;
   height: 25px;

@@ -1,0 +1,328 @@
+/*spinner*/
+/* line 2, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/_spinner.scss */
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 10;
+  transition: 1s all;
+  opacity: 1;
+  visibility: visible;
+}
+/* line 14, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/_spinner.scss */
+.preloader .loader {
+  width: 75px;
+  height: 75px;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  border-top-color: #0b192f;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: 2s spin infinite linear;
+}
+/* line 27, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/_spinner.scss */
+.preloader.done {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+/* line 4, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+body {
+  background: none repeat scroll 0 0 #0b192f;
+  color: #fff;
+  font-family: roboto, sans-serif;
+  font-weight: 300;
+}
+
+/* line 11, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.wrapper {
+  width: 1170px;
+  margin: 0 auto;
+  font-size: 24px;
+  overflow-wrap: break-word;
+}
+
+/* line 18, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+#q {
+  text-align: center;
+  width: 40%;
+  height: 10%;
+  font-size: 24px;
+  display: inline-block;
+}
+
+/* line 26, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.header-title {
+  margin-top: 25px;
+  text-align: center;
+}
+
+/* line 31, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.search-form {
+  display: block;
+  text-align: center;
+}
+
+/* line 36, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.search-form > label {
+  font-size: 24px;
+  display: block;
+  padding: 15px 0;
+}
+
+/* line 42, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.search-form > input[type="submit"] {
+  font-size: 24px;
+}
+
+/* line 46, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.search-result {
+  margin: 40px 0 0 0;
+  position: relative;
+}
+
+/* line 51, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+/* line 60, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.page {
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 10%;
+  min-height: 100%;
+  top: 0;
+  background-color: white;
+}
+
+/* line 69, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.link-page {
+  display: block;
+  height: 100%;
+  min-height: 80px;
+  width: 100%;
+  color: white;
+}
+
+/* line 77, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.previous-page {
+  left: 0;
+  -webkit-mask: url(/assets/1494205653_icon-ios7-arrow-left-ca8cbc471711f2fffb7c647bd3649d3b7abafeb2bf68311e034c467b741f07c4.svg) no-repeat center;
+  mask: url(/assets/1494205653_icon-ios7-arrow-left-ca8cbc471711f2fffb7c647bd3649d3b7abafeb2bf68311e034c467b741f07c4.svg) no-repeat center;
+}
+
+/* line 83, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.next-page {
+  right: 0;
+  -webkit-mask: url(/assets/1494205611_icon-ios7-arrow-right-7a304b24b62d9ea3f61144930a24c8b735b24160a0815356f9b40b3aaa27012e.svg) no-repeat center;
+  mask: url(/assets/1494205611_icon-ios7-arrow-right-7a304b24b62d9ea3f61144930a24c8b735b24160a0815356f9b40b3aaa27012e.svg) no-repeat center;
+}
+
+/* line 89, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+a:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* line 94, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.search-img {
+  padding: 15px;
+}
+
+/* line 98, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.result-panel {
+  padding: 0 15px;
+  flex-wrap: nowrap;
+}
+
+/* line 103, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+svg.likes-icon {
+  background: transparent url(/assets/like-af7780e5ead433e32638111a272f67d359be87506e34334352b8bb8453559006.svg) no-repeat;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+/* line 110, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.likes-count {
+  margin-left: 3px;
+}
+
+/* line 114, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.author {
+  margin-left: 15px;
+  width: 300px;
+}
+
+/* line 119, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.photo-title {
+  text-align: center;
+}
+
+/* line 123, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.photo {
+  position: relative;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+/* line 129, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.photo-description {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 25%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  opacity: 0;
+}
+
+/* line 140, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.photo-description:hover {
+  opacity: 0.9;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* line 145, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.user-profile {
+  padding: 5px 0;
+}
+
+/* line 149, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.user-avatar {
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+/* line 154, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.user-username {
+  margin-left: 10px;
+  vertical-align: top;
+}
+
+/* line 159, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.likes-icon--profile {
+  width: 20px;
+  height: 20px;
+}
+
+/* line 164, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+.inline {
+  display: inline-block;
+}
+
+@media screen and (max-width: 1200px) {
+  /* line 169, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .wrapper {
+    width: 920px;
+  }
+
+  /* line 172, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .page {
+    min-height: 0;
+    top: -5%;
+  }
+
+  /* line 176, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .img-photos {
+    width: 100%;
+  }
+
+  /* line 179, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .photo-title {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 960px) {
+  /* line 185, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .wrapper {
+    width: 780px;
+  }
+
+  /* line 188, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .previous-page {
+    left: 15%;
+  }
+
+  /* line 191, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .next-page {
+    right: 15%;
+  }
+}
+@media screen and (max-width: 780px) {
+  /* line 197, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .wrapper {
+    width: 700px;
+  }
+}
+@media screen and (max-width: 700px) {
+  /* line 203, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .wrapper {
+    width: 620px;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* line 209, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .wrapper {
+    width: 450px;
+  }
+
+  /* line 213, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .alert {
+    font-size: 20px;
+  }
+
+  /* line 217, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .img-photos {
+    width: 100%;
+  }
+
+  /* line 220, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .photo-description {
+    min-height: 100%;
+    position: static;
+    opacity: 1;
+    width: 100%;
+  }
+
+  /* line 226, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .photo {
+    display: block;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 232, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .wrapper {
+    width: 420px;
+  }
+
+  /* line 235, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .img-photos {
+    width: 90%;
+  }
+
+  /* line 238, /home/jeka/bin/projects/unsplash/app/assets/stylesheets/application.css.scss.erb */
+  .search-img {
+    width: 90%;
+  }
+}
