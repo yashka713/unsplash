@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
                          headers: {
                            Authorization: ENV['FIRST_ID']
                          },
-                         query: { query: params[:q].to_s })
+                         query: { query: params[:q] })
     flash[:notice] = if params[:q] == ''
                        'Please, fill the blank below, with correct query'
                      end
@@ -30,7 +30,9 @@ class PhotosController < ApplicationController
     send_data data, disposition: 'attachment', filename: params[:format]
   end
 
+  private
+
   def check_param_query
-    params[:page].to_i < 1 && !params[:page].nil? ? params[:page] = 1 : params[:page]
+    params[:page].to_i < 1 || params[:page].nil? ? params[:page] = 1 : params[:page]
   end
 end

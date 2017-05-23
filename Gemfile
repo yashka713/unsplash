@@ -29,6 +29,6 @@ end
 
 gem 'slim-rails'
 gem 'rubocop', require: false
-gem 'httparty'
+gem 'httparty', '0.14'
 gem 'figaro'
 gem 'rails_12factor', group: :production

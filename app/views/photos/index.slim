@@ -15,6 +15,6 @@
           span.author "#{val['user']['name']}, #{val['user']['location']}"
     - if @data['results'].length > 0
       .previous-page.page.flex-container
-        = link_to '', photos_index_path(:q=> params[:q], :page => params[:page].to_i - 1), class: 'lint-prev link-page'
+        = link_to '', photos_index_path(q: params[:q], page: params[:page].to_i - 1), class: 'lint-prev link-page'
       .next-page.page.flex-container
-        = link_to '', photos_index_path(:q=> params[:q], :page => params[:page].to_i + 1), class: 'lint-next link-page'
+        = link_to '', photos_index_path(q: params[:q], page: params[:page].to_i + 1), class: 'lint-next link-page'
