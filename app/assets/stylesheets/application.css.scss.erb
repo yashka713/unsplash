@@ -66,7 +66,7 @@ body {
   background-color: white;
 }
 
-.link-page{
+.link-page {
   display: block;
   height: 100%;
   min-height: 80px;
@@ -165,6 +165,11 @@ svg.likes-icon {
   display: inline-block;
 }
 
+.link-back{
+  color: white;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1200px) {
   .wrapper {
     width: 920px;
@@ -185,11 +190,14 @@ svg.likes-icon {
   .wrapper {
     width: 780px;
   }
+  .page {
+    width: 15%;
+  }
   .previous-page {
-    left: 15%;
+    left: 8%;
   }
   .next-page {
-    right: 15%;
+    right: 8%;
   }
 }
 
@@ -230,12 +238,14 @@ svg.likes-icon {
 
 @media screen and (max-width: 500px) {
   .wrapper {
-    width: 420px;
+    width: 410px;
   }
   .img-photos {
     width: 90%;
+    margin: 10px auto;
+    display: block;
   }
-  .search-img{
+  .search-img {
     width: 90%;
   }
 }

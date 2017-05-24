@@ -7,7 +7,6 @@ describe 'Request on show page' do
       visit root_path
       fill_in :q, with: 'car'
       click_button 'Search'
-      # debugger
     end
     VCR.use_cassette('get_photo') do
       page.find(:xpath, "//a[@href='/photos/show.sVe4lUSZh70']").click
