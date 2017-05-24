@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
   def index
     @data = HTTParty.get(ENV['SEARCH_URL'] + "?page=#{params[:page]}",
                          headers: {
-                           Authorization: 'Client-ID 3e46d797b1b4e8887ff6c2c4fa3e07cd2995aa5003a1b92daffea94176f8f810'
+                           Authorization: ENV['FIRST_ID']
                          },
                          query: { query: params[:q] })
     flash[:notice] = if params[:q] == ''
@@ -16,7 +16,7 @@ class PhotosController < ApplicationController
   def show
     @data = HTTParty.get(ENV['GET_PHOTO'] + "/#{params[:format]}",
                          headers: {
-                           Authorization: 'Client-ID 3e46d797b1b4e8887ff6c2c4fa3e07cd2995aa5003a1b92daffea94176f8f810'
+                           Authorization: ENV['FIRST_ID']
                          })
   end
 
